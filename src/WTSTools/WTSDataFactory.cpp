@@ -33,14 +33,14 @@ WTSBarStruct* WTSDataFactory::updateKlineData(WTSKlineData* klineData, WTSTickDa
 	WTSKlinePeriod period = klineData->period();
 	switch( period )
 	{
-	case KP_Tick:
+	case WTSKlinePeriod::KP_Tick:
 		return updateSecData(sInfo, klineData, tick);
 		break;
-	case KP_Minute1:
+	case WTSKlinePeriod::KP_Minute1:
 		return updateMin1Data(sInfo, klineData, tick, bAlignSec);
-	case KP_Minute5:
+	case WTSKlinePeriod::KP_Minute5:
 		return updateMin5Data(sInfo, klineData, tick, bAlignSec);
-	case KP_DAY:
+	case WTSKlinePeriod::KP_DAY:
 		return updateDayData(sInfo, klineData, tick);
 	default:
 		return NULL;
@@ -58,9 +58,9 @@ WTSBarStruct* WTSDataFactory::updateKlineData(WTSKlineData* klineData, WTSBarStr
 	WTSKlinePeriod period = klineData->period();
 	switch (period)
 	{
-	case KP_Minute1:
+	case WTSKlinePeriod::KP_Minute1:
 		return updateMin1Data(sInfo, klineData, newBasicBar, bAlignSec);
-	case KP_Minute5:
+	case WTSKlinePeriod::KP_Minute5:
 		return updateMin5Data(sInfo, klineData, newBasicBar, bAlignSec);
 	default:
 		return NULL;

@@ -211,7 +211,7 @@ private:
 
 protected:
 	WTSKlineSlice()
-		: _period(KP_Minute1)
+		: _period(WTSKlinePeriod::KP_Minute1)
 		, _times(1)
 		, _count(0)
 	{
@@ -454,7 +454,7 @@ protected:
 
 protected:
 	WTSKlineData()
-		:m_kpPeriod(KP_Minute1)
+		:m_kpPeriod(WTSKlinePeriod::KP_Minute1)
 		,m_uTimes(1)
 		,m_bUnixTime(false)
 		,m_bClosed(true)
